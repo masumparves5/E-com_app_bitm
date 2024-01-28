@@ -5,11 +5,11 @@
 @section('body')
     <div class="page-header">
         <div>
-            <h1 class="page-title">Category</h1>
+            <h1 class="page-title">Sub-Category</h1>
         </div>
         <div class="ms-auto pageheader-btn">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javascript:void(0);">Sub-Category</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0);">Add Sub-Category</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Manage Sub-Category</li>
             </ol>
         </div>
@@ -18,22 +18,22 @@
         <div class=" col-md-12">
             <div class="card">
                 <div class="card-header border-bottom">
-                    <h3 class="card-title">Add Category Form</h3>
+                    <h3 class="card-title">Add Sub-Category Form</h3>
                 </div>
                 <div class="card-body">
                     <p class="text-muted">It is Very Easy to Customize and it uses in your website apllication.</p>
                     <form class="form-horizontal" method="post" action="">
                         @csrf
                         <div class="row mb-4">
-                            <label for="firstName" class="col-md-3 form-label">Category Name</label>
+                            <label for="firstName" class="col-md-3 form-label">Sub-Category Name</label>
                             <div class="col-md-9">
-                                <input class="form-control" id="firstName" placeholder="Category Name" type="text" name="name">
+                                <input class="form-control" id="firstName" placeholder="Sub-Category Name" type="text" name="name">
                             </div>
                         </div>
                         <div class="row mb-4">
-                            <label for="lastName" class="col-md-3 form-label">Category Description</label>
+                            <label for="lastName" class="col-md-3 form-label">Sub-Category Description</label>
                             <div class="col-md-9">
-                                <textarea class="form-control" id="lastName" placeholder="Category Description" type="text" name="description"></textarea>
+                                <textarea class="form-control" id="lastName" placeholder="Sub-Category Description" type="text" name="description"></textarea>
                             </div>
                         </div>
                         <div class="row mb-4">

@@ -1,16 +1,16 @@
 @extends('admin.master')
 
-@section('title', 'add Uite')
+@section('title', 'add Brand')
 
 @section('body')
     <div class="page-header">
         <div>
-            <h1 class="page-title">Add Unite</h1>
+            <h1 class="page-title">Unit</h1>
         </div>
         <div class="ms-auto pageheader-btn">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javascript:void(0);">Add Unite</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Manage Unite</li>
+                <li class="breadcrumb-item"><a href="javascript:void(0);">Add Unit</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Manage Unit</li>
             </ol>
         </div>
     </div>
@@ -18,22 +18,22 @@
         <div class=" col-md-12">
             <div class="card">
                 <div class="card-header border-bottom">
-                    <h3 class="card-title">Add Category Form</h3>
+                    <h3 class="card-title">Add Unit Form</h3>
                 </div>
                 <div class="card-body">
                     <p class="text-muted">It is Very Easy to Customize and it uses in your website apllication.</p>
                     <form class="form-horizontal" method="post" action="">
                         @csrf
                         <div class="row mb-4">
-                            <label for="firstName" class="col-md-3 form-label">Category Name</label>
+                            <label for="firstName" class="col-md-3 form-label">Unit Name</label>
                             <div class="col-md-9">
-                                <input class="form-control" id="firstName" placeholder="Category Name" type="text" name="name">
+                                <input class="form-control" id="firstName" placeholder="Unit Name" type="text" name="name">
                             </div>
                         </div>
                         <div class="row mb-4">
-                            <label for="lastName" class="col-md-3 form-label">Category Description</label>
+                            <label for="lastName" class="col-md-3 form-label">Unit Description</label>
                             <div class="col-md-9">
-                                <textarea class="form-control" id="lastName" placeholder="Category Description" type="text" name="description"></textarea>
+                                <textarea class="form-control" id="lastName" placeholder="Unit Description" type="text" name="description"></textarea>
                             </div>
                         </div>
                         <div class="row mb-4">

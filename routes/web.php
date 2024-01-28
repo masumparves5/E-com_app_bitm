@@ -21,14 +21,16 @@ Route::get('/customer/register', [CustomerAuthController::class, 'register']) ->
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
     Route::get('/category/manage', [CategoryController::class, 'index'])->name('category.index');
     Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
+
     Route::get('/sub-category/manage', [SubCategoryController::class, 'index'])->name('sub-category.index');
     Route::get('/sub-category/create', [SubCategoryController::class, 'create'])->name('sub-category.create');
 
     Route::get('/brand/manage', [BrandController::class, 'index'])->name('brand.index');
-    Route::get('/brand/add', [BrandController::class, 'add'])->name('brand.add');
+    Route::get('/brand/add', [BrandController::class, 'create'])->name('brand.add');
 
     Route::get('/unit/manage', [UniteController::class, 'index'])->name('unit.index');
-    Route::get('/unit/add', [UniteController::class, 'index'])->name('unit.add');
+    Route::get('/unit/add', [UniteController::class, 'create'])->name('unit.add');
 });

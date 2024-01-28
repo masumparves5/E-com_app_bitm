@@ -10,7 +10,7 @@ class BrandController extends Controller
     {
         return view('admin.brand.index');
     }
-    public function add()
+    public function create()
     {
         return view('admin.brand.add');
     }
