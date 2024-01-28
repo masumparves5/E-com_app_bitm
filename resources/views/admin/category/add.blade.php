@@ -21,8 +21,8 @@
                     <h3 class="card-title">Add Category Form</h3>
                 </div>
                 <div class="card-body">
-                    <p class="text-muted">It is Very Easy to Customize and it uses in your website apllication.</p>
-                    <form class="form-horizontal" method="post" action="">
+                    <p class="text-muted">{{session('message')}}</p>
+                    <form class="form-horizontal" method="post" enctype="multipart/form-data" action="{{route('category.store')}}">
                         @csrf
                         <div class="row mb-4">
                             <label for="firstName" class="col-md-3 form-label">Category Name</label>

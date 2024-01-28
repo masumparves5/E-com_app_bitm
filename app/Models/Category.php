@@ -14,11 +14,11 @@ class Category extends Model
     public static function newCategory($request)
     {
         self::$image        =$request->file('image');
-        self::$extension = self::$image->getClientOriginalExtension();
-        self::$imageName = time().'.'.self::$extension;
-        self::$directory = 'upload/category-image/';
+        self::$extension    = self::$image->getClientOriginalExtension();
+        self::$imageName    = time().'.'.self::$extension;
+        self::$directory    = 'upload/category-image/';
         self::$image->move(self::$directory,self::$imageName);
-        self::$imageUrl = self::$directory.self::$imageName;
+        self::$imageUrl     = self::$directory.self::$imageName;
 
         self::$category = new Category();
         self::$category->name           = $request->name;
