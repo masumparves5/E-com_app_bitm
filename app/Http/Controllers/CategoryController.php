@@ -9,7 +9,10 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        return view('admin.category.index');
+        return view('admin.category.index',
+        [
+            'categories' => Category::all()
+        ]);
     }
     public function create()
     {
@@ -19,5 +22,11 @@ class CategoryController extends Controller
     {
         Category::newCategory($request);
         return back()->with('message', 'Category info created successfully.');
+    }
+    public function edit($id)
+    {
+        return view('admin.category.edit', [
+            'category' => Category::find($id)
+        ]);
     }
 }
