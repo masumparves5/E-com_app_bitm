@@ -22,7 +22,7 @@
                 </div>
                 <div class="card-body">
                     <p class="text-muted">{{session('message')}}</p>
-                    <form class="form-horizontal" method="post" enctype="multipart/form-data" action="{{route('category.store')}}">
+                    <form class="form-horizontal" method="post" enctype="multipart/form-data" action="{{route('category.update', ['id' => $category->id])}}">
                         @csrf
                         <div class="row mb-4">
                             <label for="firstName" class="col-md-3 form-label" >Category Name</label>

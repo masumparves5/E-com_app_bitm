@@ -1,6 +1,6 @@
 @extends('admin.master')
 
-@section('title', 'manage Category')
+@section('title', 'manage Brand')
 
 @section('body')
     <div class="page-header">
@@ -19,9 +19,10 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header border-bottom">
-                    <h3 class="card-title">All Category Information</h3>
+                    <h3 class="card-title">All Brand Information</h3>
                 </div>
                 <div class="card-body">
+                    <p class="text-muted">{{session('message')}}</p>
                     <div class="table-responsive">
                         <table class="table table-bordered text-nowrap border-bottom" id="basic-datatable">
                             <thead>
@@ -35,14 +36,23 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>Bella</td>
-                                <td>Chloe</td>
-                                <td>System Developer</td>
-                                <td>2018/03/12</td>
-                                <td>$654,765</td>
-                                <td>b.Chloe@datatables.net</td>
-                            </tr>
+                            @foreach($brands as $brand)
+                                <tr>
+                                    <td>{{$loop->iteration}}</td>
+                                    <td>{{$brand->name}}</td>
+                                    <td>{{$brand->description}}</td>
+                                    <td><img src="{{asset($brand->image)}}" alt="" height="50px" width="50px"></td>
+                                    <td>{{$brand->status}}</td>
+                                    <td>
+                                        <a href="{{route('brand.edit', ['id' => $brand->id])}}" class="btn btn-success btn-sm rounded-0">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                        <a href="{{route('brand.delete', ['id' => $brand->id])}}" onclick="return confirm('Are you sure to delete this');" class="btn btn-danger btn-sm rounded-0">
+                                            <i class="fa fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -51,6 +61,5 @@
         </div>
     </div>
     <!-- End Row -->
-!-- End Row -->
 
 @endsection

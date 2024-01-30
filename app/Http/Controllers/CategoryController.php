@@ -29,4 +29,14 @@ class CategoryController extends Controller
             'category' => Category::find($id)
         ]);
     }
+    public function update(Request $request, $id)
+    {
+        Category::updateCategory($request, $id);
+        return redirect('/category/manage/')->with('message', 'Category info Update successfully.');
+    }
+    public function delete($id)
+    {
+        Category::deleteCategory($id);
+        return redirect('/category/manage')->with('message', "Category Info Deleted Successfully");
+    }
 }
